@@ -32,14 +32,28 @@
 
         <main>
             <div class="container">
-                <div class="row pt-3 justify-content-around gap-1 gy-5">
-                    <div class="col-3 text-white" v-for="(singleAlbum, index) in albumsList" :key="index">
+                <div class="row pt-3 justify-content-around gap-1 gy-5 mb-3">
+                    <div class="col-3 text-white cursor-pointer" v-for="(singleAlbum, index) in albumsList" :key="index"
+                        @click="openAlbum(singleAlbum)">
                         <img :src="singleAlbum.poster" :alt="singleAlbum.title" class="w-100 mb-3">
                         <h5 class="text-center">{{ singleAlbum.title }}</h5>
                         <div class="text-center text-secondary mb-2">{{ singleAlbum.author}}</div>
                         <div class="text-center">{{ singleAlbum.year}}</div>
                     </div>
                 </div>
+                <!-- se è stato selezionato un album -->
+                <transition name="modal">
+                    <div v-if="selectedAlbum" class="album-selected">
+                        <span class="close" @click="closeAlbum">&times;</span>
+                        <div class="content-album">
+                            <img :src="selectedAlbum.poster" :alt="selectedAlbum.title" class="w-100 mb-3">
+                            <h5 class="text-center">{{ selectedAlbum.title }}</h5>
+                            <div class="text-center text-secondary mb-2">{{ selectedAlbum.author }}</div>
+                            <div class="text-center">{{ selectedAlbum.year }}</div>
+                        </div>
+                    </div>
+                </transition>
+
             </div>
         </main>
     </div>

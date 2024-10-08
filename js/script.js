@@ -5,6 +5,7 @@ createApp({
         return {
             // creo un array vuoto
             albumsList: [],
+            selectedAlbum: null,
         }
     },
     methods: {
@@ -22,6 +23,14 @@ createApp({
                 })
                 .finally(function () {
                 });
+        },
+        openAlbum(album) {
+            // al click assegno alla variabile selectedAlbum l'album selezionato
+            this.selectedAlbum = album;
+        },
+        closeAlbum() {
+            // al click riporto la variabile a null
+            this.selectedAlbum = null;
         }
     },
     created() {
