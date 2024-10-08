@@ -15,15 +15,12 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- style -->
     <link rel="stylesheet" href="./style.css">
-    <!-- vue -->
-    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- axios -->
-    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- js -->
-    <script defer href="./js/script.js"></script>
 </head>
 
 <body>
+    <!-- vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <div id="app">
         <header class="p-4">
             <div class="container">
@@ -59,7 +56,10 @@
         </main>
     </div>
 
-
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- js -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
