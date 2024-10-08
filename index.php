@@ -22,7 +22,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <div id="app">
-        <header class="p-4">
+        <header class="p-4 mb-3">
             <div class="container">
                 <div class="icon-header">
                     <i class="fa-brands fa-spotify fa-2xl"></i>
@@ -32,24 +32,12 @@
 
         <main>
             <div class="container">
-                <div class="row pt-3 justify-content-around">
-                    <div class="col-3 text-white">
-                        <img src="" alt="">
-                        <h5 class="text-center">new jersey</h5>
-                        <div class="text-center text-secondary mb-2">bon jovi</div>
-                        <div class="text-center">1988</div>
-                    </div>
-                    <div class="col-3 text-white">
-                        <img src="" alt="">
-                        <h5 class="text-center">new jersey</h5>
-                        <div class="text-center text-secondary mb-2">bon jovi</div>
-                        <div class="text-center">1988</div>
-                    </div>
-                    <div class="col-3 text-white">
-                        <img src="" alt="">
-                        <h5 class="text-center">new jersey</h5>
-                        <div class="text-center text-secondary mb-2">bon jovi</div>
-                        <div class="text-center">1988</div>
+                <div class="row pt-3 justify-content-around gap-1 gy-5">
+                    <div class="col-3 text-white" v-for="(singleAlbum, index) in albumsList" :key="index">
+                        <img :src="singleAlbum.poster" :alt="singleAlbum.title" class="w-100 mb-3">
+                        <h5 class="text-center">{{ singleAlbum.title }}</h5>
+                        <div class="text-center text-secondary mb-2">{{ singleAlbum.author}}</div>
+                        <div class="text-center">{{ singleAlbum.year}}</div>
                     </div>
                 </div>
             </div>
